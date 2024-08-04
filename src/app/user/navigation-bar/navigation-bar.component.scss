@@ -1,0 +1,36 @@
+@import '../utilities/variables';
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.5em;
+    color: $text-light;
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        a {
+            margin: 1em;
+            display: inline-block;
+            text-align: center;
+        }
+        a:hover {
+            cursor: pointer;
+            font-weight: bold;
+            color: $accent;
+        }
+        a::before {
+            cursor: pointer;
+            display: block;
+            content: attr(title);
+            font-weight: bold;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+    }
+}
