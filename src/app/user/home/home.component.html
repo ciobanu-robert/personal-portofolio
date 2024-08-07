@@ -19,7 +19,13 @@
             </h1>
         </div>
     </div>
-    <div class="scroll">
+    <div 
+        class="scroll" 
+        [ngClass]="
+            scroll == 0 ? 
+            'scroll-shown' : 
+            'scroll-hidden'"
+        >
         <p>Scroll down</p>
         <i class="fa-solid fa-angle-down"></i>
     </div>

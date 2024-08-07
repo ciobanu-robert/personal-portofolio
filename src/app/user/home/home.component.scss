@@ -7,7 +7,6 @@
 
     .image {
         flex: 1;
-
        display: flex;
        flex-direction: row;
        justify-content: space-around;
@@ -31,7 +30,7 @@
        }
        
        .name {
-            margin-top: 4em;
+            margin-top: 9em;
            i {
                color: $text-light;
                transform: scale(-1, 1);
@@ -47,7 +46,7 @@
        }
        
        .profession {
-        margin-top: 10em;
+        margin-top: 15em;
            i {
                color: $primary;
            }
@@ -58,20 +57,48 @@
     
        img {
             position: absolute;
-            z-index: 0;
+            z-index: -1;
             width: 100vw;
             height: 100vh;
             top: 0;
             left: 0;
-            object-fit:none;
-            object-position: center -20%;
+            object-fit: none;
+            object-position: center -30%;
        }
     }
 
     .scroll {
-        color: $text-dark;
+        color: $accent;
+        font-weight: bold;
         z-index: 1;
         text-align: center;
         flex: 0;
+    }
+
+    .fa-angle-down {
+        animation: hover 1.5s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes hover {
+        from { transform: translateY(0px); }
+        to { transform: translateY(-5px); }
+    }
+
+    .scroll-hidden {
+        animation: hide 0.5s ease-in-out forwards;
+    }
+
+    @keyframes hide {
+        from { opacity: 100%; }
+        to { opacity: 0%; }
+    }
+
+    .scroll-shown {
+        animation: show 0.5s ease-in-out forwards;
+    }
+
+    @keyframes show {
+        from { opacity: 0%; }
+        to { opacity: 100%; }
     }
 }
