@@ -15,5 +15,5 @@ import { UserModule } from './user/user.module';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'portofolio';
+
 }

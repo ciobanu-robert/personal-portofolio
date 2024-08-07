@@ -1,0 +1,77 @@
+@import '../utilities/variables';
+.home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .image {
+        flex: 1;
+
+       display: flex;
+       flex-direction: row;
+       justify-content: space-around;
+    
+       .bubble {
+           display: flex;
+           align-items: center;
+           height: 120px;
+           position: relative;
+           
+           i {
+               font-size: 250px;
+           }
+           h1 {
+               color: $text-dark;
+               position: absolute;
+               text-align: center;
+               left: 1.2em;
+               width: 175px;
+           }
+       }
+       
+       .name {
+            margin-top: 4em;
+           i {
+               color: $text-light;
+               transform: scale(-1, 1);
+           }
+           h1 {
+               top: 0;
+               span {
+                   background: linear-gradient(to right, #8C9FC5, #343F55);
+                   background-clip: text;
+                   -webkit-text-fill-color: transparent;        
+               }
+           }
+       }
+       
+       .profession {
+        margin-top: 10em;
+           i {
+               color: $primary;
+           }
+           h1 {
+               top: 0.5em;
+           }
+       }
+    
+       img {
+            position: absolute;
+            z-index: 0;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            object-fit:none;
+            object-position: center -20%;
+       }
+    }
+
+    .scroll {
+        color: $text-dark;
+        z-index: 1;
+        text-align: center;
+        flex: 0;
+    }
+}

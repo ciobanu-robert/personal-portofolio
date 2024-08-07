@@ -2,4 +2,29 @@
 
 .content {
     background-color: $background;
+    display: relative;
+    position: sticky;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    app-navigation-bar {
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+    }
+
+    .nav-hidden {
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    @keyframes hide {
+        from { top:0px; }
+        to { top: -100px; }
+    }
+
+    .nav-shown {
+        transition: transform 0.3s ease-out;
+    }
+
 }
