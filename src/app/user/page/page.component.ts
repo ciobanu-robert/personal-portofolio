@@ -1,5 +1,4 @@
-import { Component, HostListener } from '@angular/core';
-import { getWindow } from 'ssr-window';
+import { Component, ComponentRef, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-page',
@@ -10,17 +9,18 @@ import { getWindow } from 'ssr-window';
 export class PageComponent {
   hidden = false;
   scroll = 0;
-
-  @HostListener("window:scroll", []) onWindowScroll() {
-    const verticalOffset = getWindow().pageYOffset 
-          || document.documentElement.scrollTop 
-          || document.body.scrollTop || 0;
+  scrollPercentage = 0;
+  
+  @HostListener('window:scroll', ['$event']) 
+  onWindowScroll() {
+    const scrollOffset = window.scrollY || 0;
     
-    if (verticalOffset > this.scroll) {
+    if (scrollOffset > this.scroll) {
       this.hidden = true;
     } else {
       this.hidden = false;
     }
-    this.scroll = verticalOffset;
+    this.scroll = scrollOffset;
   }
+
 }

@@ -17,7 +17,6 @@ import { AboutComponent } from './about/about.component';
   ],
   exports: [
     PageComponent,
-
   ]
 })
 export class UserModule { }

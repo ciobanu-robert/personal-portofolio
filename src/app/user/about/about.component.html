@@ -1,8 +1,19 @@
 <div class="about">
     <div class="about-card">
         <div class="title">
-            <h1>About me</h1>
-            <img src="/assets/img/me.jpg">
+            <h1 
+                #title
+                [ngClass]="findElementAndCheckVisibility('title')"
+            >
+                About me
+            </h1>
+            <img
+                #img
+                src="/assets/img/me.jpg"
+                pAnimateOnScroll
+                enterClass="show"
+                [ngClass]="findElementAndCheckVisibility('img')"
+            >
         </div>
     
         <div class="about-me">
