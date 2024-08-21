@@ -20,6 +20,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+        width: 20%;
         h1 {
             text-align: center;
             font-size: 48px;
@@ -30,19 +31,27 @@
             width: 200px;
             border-radius: 100px;
             margin: 1.5em;
+            opacity: 0;
         }
-
-        .show {
-            animation: show 2s;
+        img.visible {
+            animation: img-visible 1s ease-in-out 0s 1 forwards;
         }
-
-        @keyframes show {
-            from { opacity: 0%; }
-            to { opacity: 100%; }
+        
+        @keyframes img-visible {
+            from {
+                opacity: 0%;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 100%;
+                transform: translateY(0px);
+            }
         }
     }
 
     .about-me {
+        width: 80%;
+
         .description, .education, .experience {
             background: rgba($primary, 0.1);
             border-radius: 10px;
@@ -50,9 +59,14 @@
             margin: 1.5em 0;
             font-size: 20px;
         }
-
+        
         .description {
             margin-top: 0;
+            flex-grow: 1000px;
+
+            .text {
+                width: 100%;
+            }
         }
 
         .education {
@@ -61,15 +75,75 @@
             }
             .edu {
                 margin: 1.5em 0;
+            }
 
-                .name {
-                    font-weight: bold;
-                }
-                .specialization {
-                    font-weight: bold;
-                    color: $accent
+            @for $i from 1 to 3 {
+                .edu:nth-child(#{$i}) {
+                    .timeframe {
+                        background: $secondary;
+                        border: $text-light 1px solid;
+                        border-radius: 10px;
+                        width: 170px;
+                        padding: 0.2em;
+                        margin: 0.5em 0;
+                        text-align: center;
+                        font-weight: bold;
+                        opacity: 0;
+                    }
+                    .timeframe.not-visible {
+                        display: none;
+                    }
+                    .timeframe.visible {
+                        animation: timeframe-visible 1s ease-in-out ($i + 1s) 1 forwards;
+                    }
+
+                    .name {
+                        font-weight: bold;
+                        opacity: 0;
+                    }
+                    .name.not-visible {
+                        display: none;
+                    }
+                    .name.visible {
+                        animation: visible 1s ease-in-out ($i + 1.2s) 1 forwards;
+                    }
+    
+                    .separator {
+                        font-weight: bold;
+                        opacity: 0;
+                    }
+                    .separator.not-visible {
+                        display: none;
+                    }
+                    .separator.visible {
+                        animation: visible 1s ease-in-out ($i + 1.4s) 1 forwards;
+                    }
+    
+                    
+                    .specialization {
+                        font-weight: bold;
+                        color: $accent;
+                        opacity: 0;
+                    }
+                    .specialization.not-visible {
+                        display: none;
+                    }
+                    .specialization.visible {
+                        animation: visible 1s ease-in-out ($i + 1.6s) 1 forwards;
+                    }
+    
+                    .school {
+                        opacity: 0;
+                    }
+                    .school.not-visible {
+                        display: none;
+                    }
+                    .school.visible {
+                        animation: visible 1s ease-in-out ($i + 1.8s) 1 forwards;
+                    }
                 }
             }
+
             .edu:last-child {
                 margin: 0;
             }
@@ -77,19 +151,67 @@
 
         .experience {
             margin-bottom: 0;
-
             h4 {
                 margin-bottom: 1.5em;
             }
+
             .exp {
                 margin: 1.5em 0;
+            }
+            
+            @for $i from 1 to 3 {
+                .exp:nth-child(#{$i}) {
+                    .timeframe {
+                        background: $secondary;
+                        border: $text-light 1px solid;
+                        border-radius: 10px;
+                        width: 170px;
+                        padding: 0.2em;
+                        margin: 0.5em 0;
+                        text-align: center;
+                        font-weight: bold;
+                        opacity: 0;
+                    }       
+                    .timeframe.not-visible {
+                        display: none;
+                    }
+                    .timeframe.visible {
+                        animation: timeframe-visible 1s ease-in-out ($i + 1s) 1 forwards;
+                    }
 
-                .job {
-                    font-weight: bold;
-                }
-                .company {
-                    font-weight: bold;
-                    color: $accent
+                    .job {
+                        font-weight: bold;
+                        opacity: 0;
+                    }
+                    .job.not-visible {
+                        display: none;
+                    }
+                    .job.visible {
+                        animation: visible 1s ease-in-out ($i + 1.2s) 1 forwards;
+                    }
+
+                    .separator {
+                        font-weight: bold;
+                        opacity: 0;
+                    }
+                    .separator.not-visible {
+                        display: none;
+                    }
+                    .separator.visible {
+                        animation: visible 1s ease-in-out ($i + 1.4s) 1 forwards;
+                    }
+
+                    .company {
+                        font-weight: bold;
+                        color: $accent;
+                        opacity: 0;
+                    }
+                    .company.not-visible {
+                        display: none;
+                    }
+                    .company.visible {
+                        animation: visible 1s ease-in-out ($i + 1.6s) 1 forwards;
+                    }
                 }
             }
             .exp:last-child {
@@ -99,13 +221,27 @@
     }
 }
 
-.timeframe {
-    background: $secondary;
-    border: $text-light 1px solid;
-    border-radius: 10px;
-    width: 170px;
-    padding: 0.2em;
-    margin: 0.5em 0;
-    text-align: center;
-    font-weight: bold;
+                    
+@keyframes timeframe-visible {
+    from {
+        opacity: 0%;
+        display: none;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 100%;
+        display: inline-block;
+        transform: translateY(0);
+    }
+}
+
+@keyframes visible {
+    from {
+        opacity: 0%;
+        display: none;
+    }
+    to {
+        opacity: 100%;
+        display: inline;
+    }
 }

@@ -1,85 +1,126 @@
 <div class="about">
     <div class="about-card">
         <div class="title">
-            <h1 
-                #title
-                [ngClass]="findElementAndCheckVisibility('title')"
-            >
-                About me
-            </h1>
+            <h1>About me</h1>
             <img
                 #img
                 src="/assets/img/me.jpg"
-                pAnimateOnScroll
-                enterClass="show"
                 [ngClass]="findElementAndCheckVisibility('img')"
             >
         </div>
-    
+        
         <div class="about-me">
             <div class="description">
-                Recent graduate with a focus on web development 
-                using Angular. Proficient in HTML, CSS,  JavaScript 
-                and TypeScript. Experienced in building dynamic and 
-                responsive web applications,  emphasizing user 
-                experience and interface design. Strong 
-                problem-solving abilities, effective  communication 
-                skills and a proactive learner open to new technologies 
-                and challenges. Eager  to apply and expand technical 
-                expertise in innovative web development projects 
-                within a  dynamic environment.
+                <p #aboutMe class="text">
+                </p>
             </div>
     
-            <div class="education">
+            <div 
+                #education
+                class="education"
+            >
                 <h4>Education</h4>
-                <div class="edu">
-                    <div class="timeframe">
-                        <p>10/2021 - 07/2024</p>
+
+                <div>
+                    <div class="edu">
+                        <div 
+                            class="timeframe"
+                            [ngClass]="findElementAndCheckVisibility('education')"
+                        >
+                            <p>10/2021 - 07/2024</p>
+                        </div>
+                        <p class="degree">
+                            <span 
+                                class="name"
+                                [ngClass]="findElementAndCheckVisibility('education')"
+                            >
+                                Bachelor's degree
+                            </span>
+                            <span
+                                class="separator"
+                                [ngClass]="findElementAndCheckVisibility('education')"
+                            >
+                                - 
+                            </span>
+                            <span 
+                                class="specialization"
+                                [ngClass]="findElementAndCheckVisibility('education')"
+                            >
+                                Computer Science for Economics
+                            </span>
+                        </p>
+                        <p 
+                            class="school"
+                            [ngClass]="findElementAndCheckVisibility('education')"
+                        >
+                            Romanian American University 
+                        </p>
                     </div>
-                    <p class="degree">
-                        <span class="name">
-                            Bachelor's degree
-                        </span> 
-                        - 
-                        <span class="specialization">
-                            Computer Science for Economics
-                        </span>
-                    </p>
-                    <p class="school">
-                        Romanian American University 
-                    </p>
-                </div>
-                <div class="edu">
-                    <div class="timeframe">
-                        <p>09/2016 - 05/2020</p>
+                    <div class="edu">
+                        <div 
+                            class="timeframe"
+                            [ngClass]="findElementAndCheckVisibility('education')"
+                        >
+                            <p>09/2016 - 05/2020</p>
+                        </div>
+                        <p class="degree">
+                            <span 
+                                class="name"
+                                [ngClass]="findElementAndCheckVisibility('education')"
+                            >
+                                High School diploma
+                            </span> 
+                            <span
+                                class="separator"
+                                [ngClass]="findElementAndCheckVisibility('education')"
+                            >
+                                - 
+                            </span>
+                            <span 
+                                class="specialization"
+                                [ngClass]="findElementAndCheckVisibility('education')"    
+                            >
+                                Mathematics and Computer Science
+                            </span>
+                        </p>
+                        <p 
+                            class="school"
+                            [ngClass]="findElementAndCheckVisibility('education')"
+                        >
+                            Stefan Procopiu High School
+                        </p>
                     </div>
-                    <p class="degree">
-                        <span class="name">
-                            High School diploma
-                        </span> 
-                        - 
-                        <span class="specialization">
-                            Mathematics and Computer Science
-                        </span>
-                    </p>
-                    <p class="school">
-                        Stefan Procopiu High School
-                    </p>
                 </div>
             </div>
             
-            <div class="experience">
+            <div class="experience"
+                #experience
+            >
                 <h4>Experience</h4>
                 <div class="exp">
-                    <div class="timeframe">
+                    <div 
+                        class="timeframe"
+                        [ngClass]="findElementAndCheckVisibility('experience')"
+                    >
                         <p>06/2023 - 09/2023 </p>
                     </div>
-                    <p class="degree">
-                        <span class="job">
+                    <p class="work">
+                        <span 
+                            class="job"
+                            [ngClass]="findElementAndCheckVisibility('experience')"
+                        >
                             Frontend Developer Inter
                         </span> 
-                        - 
-                        <span class="company">
+                        <span 
+                            class="separator"
+                            [ngClass]="findElementAndCheckVisibility('experience')"
+                        >
+                            - 
+                        </span>
+                        <span 
+                            class="company"
+                            [ngClass]="findElementAndCheckVisibility('experience')"
+                        >
                             Infosys
                         </span>
                     </p>
