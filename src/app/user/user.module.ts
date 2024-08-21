@@ -4,6 +4,7 @@ import { PageComponent } from './page/page.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ChipComponent } from './shared/chip/chip.component';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { AboutComponent } from './about/about.component';
     NavigationBarComponent,
     HomeComponent,
     AboutComponent,
+    ChipComponent,
   ],
   imports: [
     CommonModule,
