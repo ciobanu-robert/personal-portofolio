@@ -1,5 +1,7 @@
 @import '../utilities/variables';
-
+.about {
+    min-height: 100vh;
+}
 .about-card {
     color: $text-light;
     background: rgba($accent, 0.3);
