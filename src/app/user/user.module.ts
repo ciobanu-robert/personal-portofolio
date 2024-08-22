@@ -5,6 +5,8 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ChipComponent } from './shared/chip/chip.component';
+import { SkillsComponent } from './skills/skills.component';
+import { CardComponent } from './shared/card/card.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { ChipComponent } from './shared/chip/chip.component';
     HomeComponent,
     AboutComponent,
     ChipComponent,
+    SkillsComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
