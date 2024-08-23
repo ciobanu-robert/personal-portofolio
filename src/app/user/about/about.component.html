@@ -5,7 +5,7 @@
             <img
                 #img
                 src="/assets/img/me.jpg"
-                [ngClass]="findElementAndCheckVisibility('img')"
+                [ngClass]="this.scroll.findElementAndCheckVisibility('img')"
             >
         </div>
         
@@ -25,33 +25,33 @@
                     <div class="edu">
                         <div 
                             class="timeframe"
-                            [ngClass]="findElementAndCheckVisibility('education')"
+                            [ngClass]="this.scroll.findElementAndCheckVisibility('education')"
                         >
                             <app-chip [text]="'10/2021 - 07/2024'"></app-chip>
                         </div>
                         <p class="degree">
                             <span 
                                 class="name"
-                                [ngClass]="findElementAndCheckVisibility('education')"
+                                [ngClass]="this.scroll.findElementAndCheckVisibility('education')"
                             >
                                 Bachelor's degree
                             </span>
                             <span
                                 class="separator"
-                                [ngClass]="findElementAndCheckVisibility('education')"
+                                [ngClass]="this.scroll.findElementAndCheckVisibility('education')"
                             >
                                 - 
                             </span>
                             <span 
                                 class="specialization"
-                                [ngClass]="findElementAndCheckVisibility('education')"
+                                [ngClass]="this.scroll.findElementAndCheckVisibility('education')"
                             >
                                 Computer Science for Economics
                             </span>
                         </p>
                         <p 
                             class="school"
-                            [ngClass]="findElementAndCheckVisibility('education')"
+                            [ngClass]="this.scroll.findElementAndCheckVisibility('education')"
                         >
                             Romanian American University 
                         </p>
@@ -59,33 +59,33 @@
                     <div class="edu">
                         <div 
                             class="timeframe"
-                            [ngClass]="findElementAndCheckVisibility('education')"
+                            [ngClass]="this.scroll.findElementAndCheckVisibility('education')"
                         >
                             <app-chip [text]="'09/2016 - 05/2020'"></app-chip>
                         </div>
                         <p class="degree">
                             <span 
                                 class="name"
-                                [ngClass]="findElementAndCheckVisibility('education')"
+                                [ngClass]="this.scroll.findElementAndCheckVisibility('education')"
                             >
                                 High School diploma
                             </span> 
                             <span
                                 class="separator"
-                                [ngClass]="findElementAndCheckVisibility('education')"
+                                [ngClass]="this.scroll.findElementAndCheckVisibility('education')"
                             >
                                 - 
                             </span>
                             <span 
                                 class="specialization"
-                                [ngClass]="findElementAndCheckVisibility('education')"    
+                                [ngClass]="this.scroll.findElementAndCheckVisibility('education')"    
                             >
                                 Mathematics and Computer Science
                             </span>
                         </p>
                         <p 
                             class="school"
-                            [ngClass]="findElementAndCheckVisibility('education')"
+                            [ngClass]="this.scroll.findElementAndCheckVisibility('education')"
                         >
                             Stefan Procopiu High School
                         </p>
@@ -100,26 +100,26 @@
                 <div class="exp">
                     <div 
                         class="timeframe"
-                        [ngClass]="findElementAndCheckVisibility('experience')"
+                        [ngClass]="this.scroll.findElementAndCheckVisibility('experience')"
                     >
                         <app-chip [text]="'06/2023 - 09/2023'"></app-chip>
                     </div>
                     <p class="work">
                         <span 
                             class="job"
-                            [ngClass]="findElementAndCheckVisibility('experience')"
+                            [ngClass]="this.scroll.findElementAndCheckVisibility('experience')"
                         >
                             Frontend Developer Inter
                         </span> 
                         <span 
                             class="separator"
-                            [ngClass]="findElementAndCheckVisibility('experience')"
+                            [ngClass]="this.scroll.findElementAndCheckVisibility('experience')"
                         >
                             - 
                         </span>
                         <span 
                             class="company"
-                            [ngClass]="findElementAndCheckVisibility('experience')"
+                            [ngClass]="this.scroll.findElementAndCheckVisibility('experience')"
                         >
                             Infosys
                         </span>

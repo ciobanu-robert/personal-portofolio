@@ -1,6 +1,7 @@
-import { Component, ViewChild, ElementRef, HostListener, AfterContentChecked, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, HostListener } from '@angular/core';
 
 import { IElement } from '../interfaces/ielement';
+import { ScrollService } from '../services/scroll.service';
 
 
 @Component({
@@ -10,7 +11,9 @@ import { IElement } from '../interfaces/ielement';
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
-  @ViewChild('img', { static: false }) img: ElementRef<HTMLElement>;
+  constructor(public scroll: ScrollService) {}
+
+  @ViewChild('img') img: ElementRef<HTMLElement>;
   @ViewChild('aboutMe') aboutMe: ElementRef<HTMLElement>;
   @ViewChild('education') education: ElementRef<HTMLElement>;
   @ViewChild('experience') experience: ElementRef<HTMLElement>;
@@ -18,52 +21,13 @@ export class AboutComponent {
   elements: IElement[] = [];
   
   @HostListener('window:scroll', ['$event'])
-  isIntoView() {
-    let elements: IElement[];
-
+  scrollEvent() {
     if (this.elements.length == 0) {
-      elements = this.initializeElements();
-    } else {
-      elements = this.elements;
+      this.elements = this.initializeElements();
     }
+    this.elements = this.scroll.isIntoView(this.elements);
 
-    elements.forEach((element, index) => {
-      if (element.elementRef) {
-        const rect = element.elementRef.nativeElement.getBoundingClientRect();
-        const topShown = rect.top >= 0;
-        const bottomShown = rect.bottom <= window.innerHeight;
-        element.isVisible = topShown && bottomShown;
-      }
-
-      if (this.elements[index]?.isVisible != element.isVisible) {
-        this.elements[index] = {
-          index: element.index,
-          name: element.name,
-          elementRef: element.elementRef,
-          isVisible: element.isVisible,
-          looped: element.looped,
-        }
-      }
-    });
-    
-
-    this.animateText();
-  }
-
-  findElementAndCheckVisibility(name: string) {
-    const elementFound: IElement | undefined = 
-      this.elements.find(element =>
-        element.name === name
-      );
-
-      if (elementFound?.looped) {
-        return 'visible';
-      }
-      if (elementFound?.isVisible) {
-        this.elements[elementFound.index].looped = true;
-        return 'visible'
-      }
-      return 'not-visible';
+    this.animateText()
   }
 
   animateText() {
