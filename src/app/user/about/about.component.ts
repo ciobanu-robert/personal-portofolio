@@ -18,6 +18,8 @@ export class AboutComponent {
   @ViewChild('education') education: ElementRef<HTMLElement>;
   @ViewChild('experience') experience: ElementRef<HTMLElement>;
 
+  name = 'about';
+
   elements: IElement[] = [];
   
   @HostListener('window:scroll', ['$event'])
@@ -25,7 +27,7 @@ export class AboutComponent {
     if (this.elements.length == 0) {
       this.elements = this.initializeElements();
     }
-    this.elements = this.scroll.isIntoView(this.elements);
+    this.elements = this.scroll.isIntoView(this.elements, 'about');
 
     this.animateText()
   }
