@@ -3,7 +3,7 @@
     <div class="cards">
         <div #frontend>
             <app-card 
-                class="frontend"
+                class="frontend card"
                 [title]="'Frontend'"
                 [skills]="frontendSkills"
                 [ngClass]="this.scroll.findElementAndCheckVisibility('frontend', name)"
@@ -12,17 +12,17 @@
         </div>
         <div #backend>
             <app-card 
-                class="backend"
+                class="backend card"
                 [title]="'Backend'"
                 [skills]="backendSkills"
                 [ngClass]="this.scroll.findElementAndCheckVisibility('backend', name)"
             >
             </app-card>
         </div>
-        <div #miscellaneus>
+        <div #miscellaneous>
             <app-card 
-                class="miscellaneus"
-                [title]="'Miscellaneus'"
+                class="miscellaneous card"
+                [title]="'Miscellaneous'"
                 [skills]="miscellaneousSkills"
                 [ngClass]="this.scroll.findElementAndCheckVisibility('miscellaneous', name)"
             >

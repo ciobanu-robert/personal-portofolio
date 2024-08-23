@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, HostListener } from '@angular/core';
 
-import { IElement } from '../interfaces/ielement';
-import { ScrollService } from '../services/scroll.service';
+import { IElement } from '../../interfaces/ielement';
+import { ScrollService } from '../../services/scroll.service';
 
 
 @Component({

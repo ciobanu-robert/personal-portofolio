@@ -4,9 +4,8 @@ import { PageComponent } from './page/page.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ChipComponent } from './shared/chip/chip.component';
 import { SkillsComponent } from './skills/skills.component';
-import { CardComponent } from './shared/card/card.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,12 +13,11 @@ import { CardComponent } from './shared/card/card.component';
     NavigationBarComponent,
     HomeComponent,
     AboutComponent,
-    ChipComponent,
     SkillsComponent,
-    CardComponent,
   ],
   imports: [
     CommonModule,
+    SharedModule,
   ],
   exports: [
     PageComponent,

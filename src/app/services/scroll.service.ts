@@ -40,10 +40,11 @@ export class ScrollService {
       case 'about':
         this.elementsObject.about = Elements;
         break;
-      case 'string':
+      case 'skills':
         this.elementsObject.skills = Elements;
         break;
     }
+    
     return Elements;
   }
 
@@ -71,7 +72,6 @@ export class ScrollService {
         elements[elementFound.index].looped = true;
         return 'visible'
       }
-
       return 'not-visible';
   }
 }

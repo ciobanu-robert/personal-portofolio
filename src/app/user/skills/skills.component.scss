@@ -1,4 +1,4 @@
-@import '../utilities/variables';
+@import '../../utilities/variables';
 
 .skills {
     height: 100vh;
@@ -18,5 +18,27 @@
         justify-content:space-evenly;
         margin: 5em;
         align-items: center;
+
+        .card {
+            opacity: 0;
+        }
+
+        @for $i from 0 to 4 {
+            div:nth-child(#{$i}) {
+                .card.visible{
+                    animation: visible 1s ease-in-out (calc($i/10) + 0s) 1 forwards;
+                }
+            }
+        }
+    }
+}
+
+                    
+@keyframes visible {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
     }
 }

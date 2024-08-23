@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { ScrollService } from '../services/scroll.service';
-import { IElement } from '../interfaces/ielement';
+import { ScrollService } from '../../services/scroll.service';
+import { IElement } from '../../interfaces/ielement';
 
 @Component({
   selector: 'app-skills',
@@ -41,7 +41,7 @@ export class SkillsComponent {
   
   @ViewChild('frontend') frontend: ElementRef<HTMLElement>;
   @ViewChild('backend') backend: ElementRef<HTMLElement>;
-  @ViewChild('miscellaneus') miscellaneus: ElementRef<HTMLElement>;
+  @ViewChild('miscellaneous') miscellaneous: ElementRef<HTMLElement>;
 
   elements: IElement[] = [];
 
@@ -71,8 +71,8 @@ export class SkillsComponent {
       },
       {
         index: 2,
-        name: 'miscellaneus',
-        elementRef: this.miscellaneus,
+        name: 'miscellaneous',
+        elementRef: this.miscellaneous,
         isVisible: false,
         looped: false,
       },
