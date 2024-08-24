@@ -1,0 +1,23 @@
+@import '../../utilities/variables';
+
+.projects {
+    margin: 1px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    h2 {
+        color: $text-light;
+        text-align: center;
+        font-size: 48px;
+    }
+
+    .pannels {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        margin: 5em;
+        align-items: center;
+    }
+}

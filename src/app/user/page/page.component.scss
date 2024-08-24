@@ -21,22 +21,4 @@
     .nav-shown {
         transition: transform 0.3s ease-out;
     }
-
-    .show {
-        animation: show 2s;
-    }
-
-    @keyframes show {
-        from { opacity: 0%; }
-        to { opacity: 100%; }
-    }
-
-    .hide {
-        animation: hide 2s;
-    }
-
-    @keyframes hide {
-        from { opacity: 100%; }
-        to { opacity: 0; }
-    }
 }

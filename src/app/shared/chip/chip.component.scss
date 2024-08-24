@@ -4,9 +4,10 @@
     background: $secondary;
     border: $text-light 1px solid;
     border-radius: 10px;
-    width: 170px;
+    width: 100%;
     padding: 0.2em;
     margin: 0.5em 0;
     text-align: center;
     font-weight: bold;
+    color: $text-light;
 }
