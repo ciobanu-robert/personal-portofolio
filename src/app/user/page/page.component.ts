@@ -24,10 +24,10 @@ export class PageComponent {
     this.scroll = scrollOffset;
   }
 
-  @HostListener('window:beforeunload', ['$event'])
-  onRefresh() {
-    window.scrollTo(0, 0);
-    this.hidden = false;
-  }
+  // @HostListener('window:beforeunload', ['$event'])
+  // onRefresh() {
+  //   window.scrollTo(0, 0);
+  //   this.hidden = false;
+  // }
 
 }
