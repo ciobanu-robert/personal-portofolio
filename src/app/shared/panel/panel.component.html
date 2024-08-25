@@ -3,35 +3,29 @@
         <div class="title">
             <h4>About this project</h4>
             <a 
-                href="https://github.com/ciobanu-robert/CompareRGM"
+                href={{project.link}}
                 target="_blank"
             >
                 View project
             </a>
         </div>
         <div class="description">
-            <p>
-                The Compare RGM platform offers companies the ability
-                quickly and  efficiently compare products and services
-                offered by competitors, giving them  the freedom to
-                make informed decisions and identify the best options
-                according  to their needs and preferences.
-            </p>
+            <p>{{ project.description }}</p>
         </div>
         <div class="chips">
-            <app-chip [text]="'Angular'"></app-chip>
-            <app-chip [text]="'Node.js'"></app-chip>
-            <app-chip [text]="'MongoDB'"></app-chip>
+            <div *ngFor="let technologie of project.technologies">
+                <app-chip [text]="technologie"></app-chip>
+            </div>
         </div>
     </div>
     <div class="presentation">
         <img 
             class="video"
-            src="/assets/img/compare-rgm.png"
+            src={{project.image}}
         >
         <div class="title">
-            <h4>Compare RGM</h4>
-            <app-chip [text]="'02/2024 - 05/2024'"></app-chip>
+            <h4>{{ project.name }}</h4>
+            <app-chip [text]="project.date"></app-chip>
         </div>
     </div>
 </div>

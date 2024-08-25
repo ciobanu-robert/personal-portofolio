@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IProject } from '../../interfaces/iproject';
 
 @Component({
   selector: 'app-panel',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './panel.component.scss'
 })
 export class PanelComponent {
-
+@Input() project: IProject; 
 }

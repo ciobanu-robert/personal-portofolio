@@ -3,20 +3,18 @@
 
     <div class="panels">
         <div class="slider">
-            <div class="scroll">
-                <app-panel class="project"></app-panel>
-                <app-panel class="project"></app-panel>
-                <app-panel class="project"></app-panel>
-                <app-panel class="project"></app-panel>
-                <app-panel class="project"></app-panel>
-            </div>
-            <div class="scroll">
-                <app-panel class="project"></app-panel>
-                <app-panel class="project"></app-panel>
-                <app-panel class="project"></app-panel>
-                <app-panel class="project"></app-panel>
-                <app-panel class="project"></app-panel>
-            </div>
+            <div 
+                *ngFor="let i of [0, 1]"
+                class="scroll"
+            >
+                <div *ngFor="let project of projects">
+                    <app-panel 
+                        [project]="project"
+                        class="project"
+                    >
+                    </app-panel>
+                </div>
+            </div>        
         </div>
     </div>
 </div>
