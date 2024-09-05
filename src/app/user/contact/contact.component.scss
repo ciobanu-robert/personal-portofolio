@@ -1,0 +1,100 @@
+@import '../../utilities/variables';
+
+.contact {
+    margin: 1px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    h2 {
+        color: $text-light;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .input {
+            margin: 1em;
+
+            .input-name {
+                font-size: 15px;
+                color: $text-light;
+                margin: 0.2em 0;
+            }
+
+            .input-field {
+                width: 400px;
+                height: 25px;
+                background-color: rgba($primary, 0.2);
+                border: 1px solid $accent;
+                border-radius: 8px;
+                color: $text-light;
+                box-shadow: 
+                0px 10px 10px 0px 
+                rgba(black, 0.25);
+            }
+
+            .textarea {
+                height: 80px;
+                resize: none;
+            }
+
+        }
+        .submit {
+            font-size: 15px;
+            font-weight: bold;
+            color: $text-light;
+            background-color: $accent;
+            border: none;
+            border-radius: 10px;
+            margin: 0.5em 0;
+            padding: 0.7em;
+            width: 100px;
+            box-shadow: 
+            0px 10px 10px 0px 
+            rgba(black, 0.25);
+            animation: not-hover 0.5s  ease-in-out forwards;
+        }
+
+        .submit:hover {
+            animation: hover 0.5s  ease-in-out forwards;
+        }
+    }
+}
+
+@keyframes hover {
+    from {
+        color: $text-light;
+        font-size: 15px;
+        background-color: $accent;
+        width: 100px;
+    }
+    to {
+        color: $accent;
+        font-size: 16px;
+        background-color: $text-light;
+        width: 105px;
+    }
+}
+
+@keyframes not-hover {
+    to {
+        color: $text-light;
+        font-size: 15px;
+        background-color: $accent;
+        width: 100px;
+    }
+    from {
+        color: $accent;
+        font-size: 16px;
+        background-color: $text-light;
+        width: 105px;
+    }
+}

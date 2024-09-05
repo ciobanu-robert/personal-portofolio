@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from "./contact/contact.component";
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { ProjectsComponent } from './projects/projects.component';
     AboutComponent,
     SkillsComponent,
     ProjectsComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-  ],
+],
   exports: [
     PageComponent,
   ]
