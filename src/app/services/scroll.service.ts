@@ -7,6 +7,7 @@ import { IElementsObject } from '../interfaces/ielementsObject';
 })
 export class ScrollService {
   elementsObject: IElementsObject = {
+    page: [],
     about: [],
     skills: [],
   };
@@ -37,6 +38,9 @@ export class ScrollService {
     });
 
     switch (name) {
+      case 'page':
+        this.elementsObject.page = Elements;
+        break;
       case 'about':
         this.elementsObject.about = Elements;
         break;
@@ -50,8 +54,13 @@ export class ScrollService {
 
   findElementAndCheckVisibility(elementName: string, name: string) {
     let elements: IElement[] = []
+    let looping = false;
 
     switch (name) {
+      case 'page':
+        elements = this.elementsObject.page;
+        looping = true;
+        break;
       case 'about':
         elements = this.elementsObject.about;
         break;
@@ -64,10 +73,10 @@ export class ScrollService {
       elements.find(element =>
         element.name === elementName
       );
-
-      if (elementFound?.looped) {
+      if (elementFound?.looped && !looping) {
         return 'visible';
       }
+      
       if (elementFound?.isVisible) {
         elements[elementFound.index].looped = true;
         return 'visible'

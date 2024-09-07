@@ -27,7 +27,7 @@ export class AboutComponent {
     if (this.elements.length == 0) {
       this.elements = this.initializeElements();
     }
-    this.elements = this.scroll.isIntoView(this.elements, 'about');
+    this.elements = this.scroll.isIntoView(this.elements, this.name);
 
     this.animateText()
   }

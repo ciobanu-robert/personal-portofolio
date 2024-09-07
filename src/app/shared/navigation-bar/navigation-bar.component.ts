@@ -1,5 +1,6 @@
 import { Component, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { ScrollService } from '../../services/scroll.service';
 @Component({
   selector: 'app-navigation-bar',
   standalone: false,
@@ -7,6 +8,8 @@ import { EventEmitter } from '@angular/core';
   styleUrl: './navigation-bar.component.scss'
 })
 export class NavigationBarComponent {
+  constructor(public scroll: ScrollService) {}
+
   @Output() scrollHome = new EventEmitter();
   @Output() scrollAbout = new EventEmitter();
   @Output() scrollSkills = new EventEmitter();

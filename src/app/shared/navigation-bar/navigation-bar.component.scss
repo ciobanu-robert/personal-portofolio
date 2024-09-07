@@ -24,6 +24,11 @@
             font-weight: bold;
             color: $accent;
         }
+        a.visible {
+            cursor: pointer;
+            font-weight: bold;
+            color: $accent;
+        }
         a::before {
             cursor: pointer;
             display: block;

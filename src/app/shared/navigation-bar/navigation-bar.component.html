@@ -8,30 +8,35 @@
         <a 
             title="Home"
             (click)="onClickHome($event)"
+            [ngClass]="this.scroll.findElementAndCheckVisibility('home', 'page')"
         >
             Home
         </a>
         <a 
             title="About"
             (click)="onClickAbout($event)"
+            [ngClass]="this.scroll.findElementAndCheckVisibility('about', 'page')"
         >
             About
         </a>
         <a 
             title="Skills"
             (click)="onClickSkills($event)"
+            [ngClass]="this.scroll.findElementAndCheckVisibility('skills', 'page')"
         >
             Skills
         </a>
         <a 
             title="Projects"
             (click)="onClickProjects($event)"
+            [ngClass]="this.scroll.findElementAndCheckVisibility('projects', 'page')"
         >
             Projects
         </a>
         <a 
             title="Contact"
             (click)="onClickContact($event)"
+            [ngClass]="this.scroll.findElementAndCheckVisibility('contact', 'page')"
         >
             Contact
         </a>
