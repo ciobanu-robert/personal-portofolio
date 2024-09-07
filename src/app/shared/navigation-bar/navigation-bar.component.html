@@ -7,12 +7,33 @@
     <div class="links">
         <a 
             title="Home"
+            (click)="onClickHome($event)"
         >
             Home
         </a>
-        <a title="About">About</a>
-        <a title="Skills">Skills</a>
-        <a title="Projects">Projects</a>
-        <a title="Contact">Contact</a>
+        <a 
+            title="About"
+            (click)="onClickAbout($event)"
+        >
+            About
+        </a>
+        <a 
+            title="Skills"
+            (click)="onClickSkills($event)"
+        >
+            Skills
+        </a>
+        <a 
+            title="Projects"
+            (click)="onClickProjects($event)"
+        >
+            Projects
+        </a>
+        <a 
+            title="Contact"
+            (click)="onClickContact($event)"
+        >
+            Contact
+        </a>
     </div>
 </div>
