@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { ScrollService } from '../../services/scroll.service';
 @Component({
@@ -8,7 +8,9 @@ import { ScrollService } from '../../services/scroll.service';
   styleUrl: './navigation-bar.component.scss'
 })
 export class NavigationBarComponent {
-  constructor(public scroll: ScrollService) {}
+  constructor(public scrollService: ScrollService) {}
+
+  @Input() scroll = 0;
 
   @Output() scrollHome = new EventEmitter();
   @Output() scrollAbout = new EventEmitter();
@@ -30,5 +32,12 @@ export class NavigationBarComponent {
   }
   onClickContact(event: Event) {
     this.scrollContact.emit('event');
+  }
+
+  homeClass() {
+    if (this.scroll == 0) {
+      return 'visible';
+    }
+    return 'not-visible';
   }
 }
